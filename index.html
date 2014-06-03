@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Towing Talk</h1>
+          <p>Hello fellow towers. Since we here at Bill and Sons know how customers are usually pains in the ass, we wanted to set up a place where all us professionals could be honest about how much we want to tell them to fuck off. </p>
+          <h3> Subscribe to Towing Talk</h3>
+          <form action="demo_form.asp">
+          <input type="text" name="fname" placeholder="Your email"><br>
+  <input type="submit" value="Subscribe">
+</form>
+        </div>
+        <div class="col-md-6 video-container">
+<iframe width="560" height="315" src="//www.youtube.com/embed/aFKy27gMGaQ" frameborder="0" allowfullscreen></iframe>
+       </div>
+          <div class="col-md-6">
+            <h2>Contribute to Towing Talk</h2>
+            <p>Send us stories, complaints, pet peeves, or anything else that chaps your ass about this business of towing. If your story's messed up enough, we might feature it in an upcoming issue of Towing Talk. 
+          </div>
+
+          <div class="col-md-6">
+            <p>Submit your totally anonymous complaint or story below:
+               <?php
+// display form if user has not clicked submit
+if (!isset($_POST["submit"])) {
+  ?>
+  <form method="post" action='<?php echo $_SERVER["PHP_SELF"];?>'>
+  Message: <textarea rows="10" cols="40" name="message"></textarea><br>
+  <input type="submit" name="submit" value="Submit Feedback">
+  </form>
+  <?php 
+} else {    // the user has submitted the form
+  // Check if the "from" input field is filled out
+  if (isset($_POST["from"])) {
+    $subject = 'Contribution for Towing Talk';
+    $message = $_POST["message"];
+    // message lines should not exceed 70 characters (PHP rule), so wrap it
+    $message = wordwrap($message, 70);
+    // send mail
+    mail("sallypoulsen@gmail.com",$subject,$message);
+    echo "Thank you for sending us feedback";
+  }
+}
+?>
+          
+          </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Bill and Sons Towing 2014  | Site by Dave  |  Content by Tony &amp; Jon | Idea by Eric</p>
+      </footer>
+    </div> <!-- /container -->        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      
+    </body>
+</html>

@@ -1,0 +1,97 @@
+body {
+	background-image: url('../img/bg.jpg');
+	font-family: helvetica, arial, sans-serif;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+	margin: 0px;
+	line-height: 30px;
+}
+
+
+.underline {
+	text-decoration: underline;
+}
+
+header {
+	padding: 10px 20px;
+	width: 100%;
+	background: black;
+	margin-bottom: 20px;
+}
+
+.container {
+	background-color: #fff;
+	padding: 20px;
+}
+
+.logo-img {
+	float: left;
+}
+
+
+.contribute {
+	input[type=submit]{
+	width: 80%;
+	margin-left: 10%;
+	height: 40px;
+	}
+}
+
+textarea{
+	width: 100%;
+	min-height: 240px;
+}
+
+.second-pane {
+	background-color: #428bca;
+	color: #fff;
+	margin: 40px 0px 40px 0px;
+	padding: 20px 0px 40px 0px;	
+	text-align: center;
+	input[type=email]{
+		width: 100%;
+		height: 40px;
+		padding-left:10px;
+	}
+
+	input[type=submit]{
+		width: 80%;
+		height: 40px;
+	}
+}
+
+.error {
+	color: red;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+	text-align: center;
+}
